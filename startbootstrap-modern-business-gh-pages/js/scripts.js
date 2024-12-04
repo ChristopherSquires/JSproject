@@ -14,7 +14,3 @@ function nextQuestion() {
 
     window.location.href = questions[randomChoice];
 }
-
-// function startQuiz(begin) {
-//     window.location.href = begin;
-// }
