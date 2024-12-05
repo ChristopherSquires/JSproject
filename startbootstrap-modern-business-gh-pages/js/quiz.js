@@ -24,25 +24,9 @@ const generateRandom = () => {
 };
 
 const checkCount = () => {
-    localStorage.setItem(score);
+    localStorage.setItem("score", score);
     window.location.href = 'score.html';
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-    const music = new Audio("assets/Pokémon Omega Ruby & Alpha Sapphire - Vs World Champion (Highest Quality) [ ezmp3.cc ].mp3");
-
-    if (localStorage.getItem("isMusicPlaying") === "true") {
-        music.play()
-            .then(() => {
-                console.log("Music resumed playing.");
-            })
-            .catch(error => {
-                console.error("Error playing audio:", error);
-            });
-    }
-
-    localStorage.removeItem("isMusicPlaying");
-});
 
 const loadQuestion = () => {
     if (generatedNumber == 0) {
