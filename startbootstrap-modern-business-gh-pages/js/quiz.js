@@ -16,15 +16,17 @@ const generateRandom = () => {
             numbers.push(randomNumber);
             return randomNumber;
         }
+        else if (count == 10) {
+            loop = false;
+        }
     }
         
 };
 
 const checkCount = () => {
-    if (count == 10) {
-        window.location.href = "score.html";
-    }
-}
+    localStorage.setItem(score);
+    window.location.href = 'score.html';
+};
 
 const loadQuestion = () => {
     if (generatedNumber == 0) {
@@ -114,9 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
     loadQuestion();
 
     $("#button1").addEventListener("click", () => {
+        count += 1;
         if (generatedNumber == 0 || generatedNumber == 4 || generatedNumber == 5 || generatedNumber == 9) {
             score += 1;
-            console.log(score);
             generatedNumber = generateRandom();
             loadQuestion();
         }
@@ -124,14 +126,15 @@ document.addEventListener("DOMContentLoaded", () => {
             generatedNumber = generateRandom();
             loadQuestion();
         }
-        count += 1;
-        checkCount();
+        if (count == 10) {
+            checkCount();
+        }
     });
 
     $("#button2").addEventListener("click", () => {
+        count += 1;
         if (generatedNumber == 3 || generatedNumber == 7) {
             score += 1;
-            console.log(score);
             generatedNumber = generateRandom();
             loadQuestion();
         }
@@ -139,14 +142,15 @@ document.addEventListener("DOMContentLoaded", () => {
             generatedNumber = generateRandom();
             loadQuestion();
         }
-        count += 1;
-        checkCount();
+        if (count == 10) {
+            checkCount();
+        }
     });
 
     $("#button3").addEventListener("click", () => {
+        count += 1;
         if (generatedNumber == 2 || generatedNumber == 6) {
             score += 1;
-            console.log(score);
             generatedNumber = generateRandom();
             loadQuestion();
         }
@@ -154,14 +158,15 @@ document.addEventListener("DOMContentLoaded", () => {
             generatedNumber = generateRandom();
             loadQuestion();
         }
-        count += 1;
-        checkCount();
+        if (count == 10) {
+            checkCount();
+        }
     });
 
     $("#button4").addEventListener("click", () => {
+        count += 1;
         if (generatedNumber == 1 || generatedNumber == 8) {
             score += 1;
-            console.log(score);
             generatedNumber = generateRandom();
             loadQuestion();
         }
@@ -169,7 +174,8 @@ document.addEventListener("DOMContentLoaded", () => {
             generatedNumber = generateRandom();
             loadQuestion();
         }
-        count += 1;
-        checkCount();
+        if (count == 10) {
+            checkCount();
+        }
     });
 });
