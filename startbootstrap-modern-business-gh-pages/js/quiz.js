@@ -1,7 +1,5 @@
 "use strict"
 
-// test
-
 const $ = selector => document.querySelector(selector);
 
 let numbers = [];
@@ -143,5 +141,5 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         count += 1;
-  
+    }
 });
