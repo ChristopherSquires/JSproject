@@ -1,5 +1,7 @@
 "use strict"
 
+// test
+
 const $ = selector => document.querySelector(selector);
 
 let numbers = [];
