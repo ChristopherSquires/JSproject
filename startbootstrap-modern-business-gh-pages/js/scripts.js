@@ -13,9 +13,22 @@
 const $ = selector => document.querySelector(selector);
 
 function nextQuestion() {
+    localStorage.setItem("isMusicPlaying", "true");
     window.location.href = 'quiz.html';
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    const music = new Audio("assets/Pokémon Omega Ruby & Alpha Sapphire - Vs World Champion (Highest Quality) [ ezmp3.cc ].mp3");
+
+    $("#play-music").addEventListener("click", () => {
+        music.play()
+            .then(() => {
+                console.log("Music started playing.");
+                localStorage.setItem("isMusicPlaying", "true");
+            })
+            .catch(error => {
+                console.error("Error playing audio:", error);
+            });
+    });
     $("#start").addEventListener("click", nextQuestion);
 });
