@@ -8,18 +8,14 @@
 // Use this file to add JavaScript to your project
 // "use stricthi"
 
+"use strict";
 
-// let remainingQuestions = ['Q1.html', 'Q2.html', 'Q3.html', 'Q4.html', 'Q5.html', 'Q6.html', 'Q7.html', 'Q8.html', 'Q9.html', 'Q10.html'];
+const $ = selector => document.querySelector(selector);
 
-// function nextQuestion() {
-//     if (remainingQuestions.length === 0) {
-//         alert('No more questions left!');
-//         return;
-//     }
+function nextQuestion() {
+    window.location.href = 'quiz.html';
+};
 
-//     const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
-//     const nextQuestion = remainingQuestions[randomIndex];
-
-//     remainingQuestions.splice(randomIndex, 1);
-
-//     window.location.href = nextQuestion;
+document.addEventListener("DOMContentLoaded", () => {
+    $("#start").addEventListener("click", nextQuestion);
+});
