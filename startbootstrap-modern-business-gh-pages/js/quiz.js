@@ -24,7 +24,7 @@ const generateRandom = () => {
 };
 
 const checkCount = () => {
-    localStorage.setItem(score);
+    localStorage.setItem("score", score);
     window.location.href = 'score.html';
 };
 
